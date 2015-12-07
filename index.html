@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
 <head>
 	<meta charset="utf-8">
@@ -28,7 +28,7 @@
 
 	<!--AngularUIRoute-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-	
+
 	<!--ChartJS-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
@@ -40,8 +40,115 @@
 </head>
 
 <body>
-	
-	
-	
+	<!--Page Wrapper-->
+	<div id="fullPageWrapper">
+
+		<!--Sign up modal for new users-->
+		<div ng-show="!authData" ng-controller="HomeController" class="modal fade" id="signupModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="signupModalTitle">Sign Up</h4>
+					</div>
+					<div class="modal-body">
+						<form name="signupForm" ng-show="!userId" novalidate>
+							<div class="form-group">
+								<label for="signupfirstName">First Name</label>
+								<input class="form-control" name="firstName" ng-model="firstName" id="signupfirstName" type="text" placeholder="Give your first name">
+							</div>
+							<div class="form-group">
+								<label for="signuplastName">Last Name</label>
+								<input class="form-control" name="lastName" ng-model="lastName" id="signuplastName" type="text" placeholder="Give your last name">
+							</div>
+							<div class="form-group">
+								<label for="signupEmail">Email</label>
+								<input class="form-control" id="signupEmail" ng-model="email" name="email" type="email" placeholder="Give an email">
+								<p class="help-block" ng-show="signupForm.email.$error.email">Not an email!</p>
+							</div>
+							<div class="form-group">
+								<label for="signupPassword">Password</label>
+								<input class="form-control" name="password" ng-model="password" id="signupPassword" type="password" placeholder="Give a password">
+							</div>
+							<button id="signupSubmitButton" ng-click="signUp()" ng-disabled="myForm.$invalid || myForm.email.$invalid" type="submit"
+							class="btn btn-primary userAuthButton">Sign Up</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Log in modal for existing users-->
+		<div ng-show="!authData" ng-controller="HomeController" class="modal fade" id="loginModal" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="loginModalTitle">Log In</h4>
+					</div>
+					<div class="modal-body">
+						<form name="loginForm">
+							<div class="form-group">
+								<label for="loginEmail">Email</label>
+								<input class="form-control" id="loginEmail" ng-model="email" type="email" placeholder="Give your email">
+								<p class="help-block" ng-show="loginForm.email.$error.email">Not an email!</p>
+							</div>
+							<div class="form-group">
+								<label for="loginPasword">Password</label>
+								<input class="form-control" ng-model="password" name="password" id="loginPasword" type="password" placeholder="Give your password">
+							</div>
+							<button id="loginSubmitButton" ng-click="signIn()" ng-disabled="myForm.email.$invalid || myForm.password.$invalid" type="submit"
+							class="btn btn-primary userAuthButton">Log In</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Navbar for the page-->
+		<header>
+			<nav ng-controller="HomeController" class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a ui-sref="index" class="navbar-brand">CharJS Dashboard</a>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="main-navbar">
+						<ul class="nav navbar-nav">
+							<li class="navbar_component" ng-show="authData"><a ui-sref="index">Main</a></li>
+							<li class="navbar_component" ng-show="authData"><a ui-sref="favorites">Add Data</a></li>
+							<li class="navbar_component" ng-show="authData"><a ui-sref="explore">About</a></li>
+						</ul>
+						<div id="navbarButtonGroup" class="pull-right">
+							<!--Button to sign up a new user-->
+							<button id="signupButton" ng-show="!authData" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+							<!--Button for existing users to log in-->
+							<button id="loginButton" ng-show="!authData" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Log In</button>
+							<!--Button for current users to log out-->
+							<button id="logoutButton" ng-show="authData" ng-click="logOut()" class="btn btn-primary">Log Out</button>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!--Content-->
+		<div>
+			<div ui-view></div>
+		</div>
+
+		<!--Footer-->
+		<footer id="mainFooter" class="jumbotron container">
+			<p id="footer-title">Site Made With
+				<span class="glyphicon glyphicon-heart-empty"></span> In Seattle, WA</p>
+			<p id="footer-title-secondary">By Abhishek Joshi, Rahul Banala, Katrina Saulon, & Jessie Zhang</p>
+		</footer>
+	</div>
+
 </body>
+
 </html>
