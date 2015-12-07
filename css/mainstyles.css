@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway|Lato|Montserrat);
+
+/*Main Styles*/
+
+body {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+.jumbotron {
+	background-color: #FFFFFF;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    margin-bottom: 0em;
+	margin: 0em;
+	width: 100%;
+	padding: 2em;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: .5em;
+	text-transform: lowercase;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	margin-bottom: 3em;
+	margin-top: 1em;
+}
+
+h3 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: capitalize;
+	margin-bottom: 2em;
+}
