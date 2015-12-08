@@ -81,28 +81,27 @@ h3 {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	margin-bottom: 0em;
-	background-color: rgba(0,0,0,0) !important;
+	background-color: #FFFFFF;
     border: none;
 }
 
 .navbar_component > a{
-	color: #FFFFFF !important;
+	color: rgba(0, 91, 153, 1) !important;
 	text-transform: uppercase;
 	font-family: 'Montserrat', sans-serif;
 }
 
 .navbar_component > a:hover {
-	color: rgb(179, 223, 255) !important;
+	color: rgba(0, 91, 153, .65) !important;
 }
 
 .navbar-brand {
 	font-family: 'Montserrat', sans-serif;
-	color: #FFFFFF !important;
+	color: rgba(0, 91, 153, 1) !important;
 }
 
 .navbar-brand:hover {
-	background-color: rgba(179, 223, 255, 1);
-	color: rgb(179, 223, 255) !important;
+	color: rgba(0, 91, 153, .65) !important;
 }
 
 #navbarButtonGroup {
@@ -111,54 +110,14 @@ h3 {
 }
 
 #navbarButtonGroup > button {
-	background-color: transparent;
-	color: #FFFFFF !important;
-	border-style: solid;
-	border-color: #FFFFFF;
-	border-width: .1em;
-	margin-left: 1em;
-	margin-right: 1em;
+	margin-left: .5em;
+	margin-right: .5em;
 }
 
-#navbarButtonGroup > button:hover {
-	background-color: #FFFFFF;
-	color: rgb(0, 91, 153) !important;
-	border-color: #FFFFFF;
-}
-
-/*Modal Styles*/
-.modal {
-	text-align: left;
-}
-
-.modal-content {
-	-o-border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
-	
-	background-color: rgba(255, 255, 255, 1);
-	color: rgb(0, 91, 153);
-	border: none;
-}
-
-.userAuthButton {
-	background-color: transparent;
-	color: rgb(0, 91, 153) !important;
-	border-style: solid;
-	border-color: rgb(0, 91, 153);
-	border-width: .1em;
-}
-
-.userAuthButton:hover {
-	background-color: rgb(0, 91, 153);
-	color: #FFFFFF !important;
-	border-color: rgb(0, 91, 153);
-}
 
 /*Footer Styles*/
 #mainFooter {
-	background-color: rgba(0,0,0,0);
+	background-color: transparent;
 	color: #FFFFFF;
 	font-family: 'Raleway', sans-serif;
 	text-transform: lowercase;
@@ -174,4 +133,9 @@ h3 {
 #footer-title-secondary {
 	margin-top: 0em;
 	margin-bottom: 0em;
+}
+
+/*About Section*/
+#aboutSection {
+	padding-top: 7em;
 }

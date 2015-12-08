@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -7,110 +7,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ChartJS Dashboard</title>
 
-	<!-- Styles -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
 	<!--jQuery-->
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 
 	<!--Bootstrap-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-	<!--Angular-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-
-	<!--Firebase-->
-	<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
-
-	<!--AngularFire-->
-	<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
-
-	<!--AngularUIRoute-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
 	<!--ChartJS-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
-	<!-- Custom files -->
+	<!-- Custom Styles -->
 	<link rel="stylesheet" href="css/mainstyles.css" />
 
 	<!--Custom JavaScript-->
-	<script src="../js/main.js"></script>
+	<script src="js/main.js"></script>
 </head>
 
 <body>
 	<!--Page Wrapper-->
 	<div id="fullPageWrapper">
 
-		<!--Sign up modal for new users-->
-		<div ng-show="!authData" ng-controller="MainController" class="modal fade" id="signupModal" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="signupModalTitle">Sign Up</h4>
-					</div>
-					<div class="modal-body">
-						<form name="signupForm" ng-show="!userId" novalidate>
-							<div class="form-group">
-								<label for="signupfirstName">First Name</label>
-								<input class="form-control" name="firstName" ng-model="firstName" id="signupfirstName" type="text" placeholder="Give your first name">
-							</div>
-							<div class="form-group">
-								<label for="signuplastName">Last Name</label>
-								<input class="form-control" name="lastName" ng-model="lastName" id="signuplastName" type="text" placeholder="Give your last name">
-							</div>
-							<div class="form-group">
-								<label for="signupEmail">Email</label>
-								<input class="form-control" id="signupEmail" ng-model="email" name="email" type="email" placeholder="Give an email">
-								<p class="help-block" ng-show="signupForm.email.$error.email">Not an email!</p>
-							</div>
-							<div class="form-group">
-								<label for="signupPassword">Password</label>
-								<input class="form-control" name="password" ng-model="password" id="signupPassword" type="password" placeholder="Give a password">
-							</div>
-							<button id="signupSubmitButton" ng-click="signUp()" ng-disabled="myForm.$invalid || myForm.email.$invalid" type="submit"
-							class="btn btn-primary userAuthButton">Sign Up</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!--Log in modal for existing users-->
-		<div ng-show="!authData" ng-controller="MainController" class="modal fade" id="loginModal" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="loginModalTitle">Log In</h4>
-					</div>
-					<div class="modal-body">
-						<form name="loginForm">
-							<div class="form-group">
-								<label for="loginEmail">Email</label>
-								<input class="form-control" id="loginEmail" ng-model="email" type="email" placeholder="Give your email">
-								<p class="help-block" ng-show="loginForm.email.$error.email">Not an email!</p>
-							</div>
-							<div class="form-group">
-								<label for="loginPasword">Password</label>
-								<input class="form-control" ng-model="password" name="password" id="loginPasword" type="password" placeholder="Give your password">
-							</div>
-							<button id="loginSubmitButton" ng-click="signIn()" ng-disabled="myForm.email.$invalid || myForm.password.$invalid" type="submit"
-							class="btn btn-primary userAuthButton">Log In</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!--Navbar for the page-->
 		<header>
-			<nav ng-controller="MainController" class="navbar navbar-default">
+			<nav ng-controller="MainController" class="navbar navbar-default navbar-fixed-top">
 				<div class="container-fluid">
 					<div class="navbar-header">
-						<a ui-sref="main" class="navbar-brand">ChartJS Dashboard</a>
+						<a href="#" class="navbar-brand">ChartJS Dashboard</a>
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -119,26 +42,71 @@
 					</div>
 					<div class="collapse navbar-collapse" id="main-navbar">
 						<ul class="nav navbar-nav">
-							<li class="navbar_component"><a ui-sref="main">Main</a></li>
-							<li class="navbar_component"><a ui-sref="about">About</a></li>
-							<li class="navbar_component"><a ui-sref="data">Add Data</a></li>
+							<li class="navbar_component"><a href="#aboutSection">About</a></li>
+							<li class="navbar_component"><a href="#lineChartSection">Line Chart</a></li>
+							<li class="navbar_component"><a href="#barChartSection">Bar Chart</a></li>
+							<li class="navbar_component"><a href="#pieChartSection">Pie Chart</a></li>
 						</ul>
 						<div id="navbarButtonGroup" class="pull-right">
-							<!--Button to sign up a new user-->
-							<button id="signupButton" ng-show="!authData" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign Up</button>
-							<!--Button for existing users to log in-->
-							<button id="loginButton" ng-show="!authData" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Log In</button>
-							<!--Button for current users to log out-->
-							<button id="logoutButton" ng-show="authData" ng-click="logOut()" class="btn btn-primary">Log Out</button>
+							<button class="btn btn-primary">Sign Up</button>
+							<button class="btn btn-primary">Log In</button>
 						</div>
 					</div>
 				</div>
 			</nav>
 		</header>
 
-		<!--Content-->
+		<!--About Section-->
+
+		<section id="aboutSection" class="container jumbotron">
+			<h1 class="pageTitle">About</h1>
+
+			<h3></h3>
+		</section>
+
+		<!--Chart Content-->
 		<div>
-			<div ui-view></div>
+			<h1 class="pageTitle">Dashboard</h1>
+
+			<!--Line Chart-->
+			<section id="lineChartSection" class="container sectionContainer">
+				<h2 class="sectionTitle">US Historical GDP</h2>
+				<h3 class="sectionDescription">Blah</h3>
+
+				<div class="sectionChart">
+					<canvas id="lineChart"></canvas>
+				</div>
+
+			</section>
+
+			<!--Bar Chart-->
+			<section id="barChartSection" class="container sectionContainer">
+				<h2 class="sectionTitle">International GDP Growth (2014)</h2>
+				<h3 class="sectionDescription">Blah</h3>
+
+				<div class="sectionChart">
+					<canvas id="barChart"></canvas>
+				</div>
+
+			</section>
+
+			<!--Pie & Donut Charts-->
+			<section id="pieChartSection" class="container sectionContainer">
+				<h2 class="sectionTitle">US Industry GDP Share (2011)</h2>
+				<h3 class="sectionDescription">Blah</h3>
+
+				<div class="sectionChart">
+					<div class="row">
+						<div class="col-xs-12 col-md-6">
+							<canvas id="pieChart"></canvas>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<canvas id="donutChart"></canvas>
+						</div>
+					</div>
+				</div>
+
+			</section>
 		</div>
 
 		<!--Footer-->
@@ -149,6 +117,85 @@
 		</footer>
 	</div>
 
+	<script>
+		
+		//Line Chart
+		var lineData = {
+			labels: ["1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
+				"2010", "2011", "2012", "2013"],
+			datasets: [
+				{
+					label: "My First dataset",
+					fillColor: "rgba(0, 204, 102,0.2)",
+					strokeColor: "rgba(0, 204, 102,1)",
+					pointColor: "rgba(0, 204, 102,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(0, 204, 102,1)",
+					data: [4.8, 4.1, 1.0, 1.8, 2.8, 3.8, 2.8, 3.0, 2.6, 0.3, 2.8,
+						2.5, 1.6, 2.3, 2.2]
+				}
+			]
+		};
+		
+		
+		var lineC = $("#lineChart").get(0).getContext("2d");
+		var lineChart = new Chart(lineC).Line(lineData, { responsive: true });
+			
+		//Bar Chart
+			
+		var barData = {
+			labels: ["USA", "China", "Japan", "Maldives", "India", "Pakistan", "Bhutan", "Brazil", "Jamaica",
+				"Mongolia", "Germany", "UK", "Sierra Leone", "Nigeria", "South Africa", "South Korea", "Qatar",
+				"Saudi Arabia", "Sweden", "Turkmenistan"],
+			datasets: [
+				{
+					label: "My First dataset",
+					fillColor: "rgba(247, 70, 74,0.5)",
+					strokeColor: "rgba(247, 70, 74,0.8)",
+					highlightFill: "rgba(247, 70, 74,0.75)",
+					highlightStroke: "rgba(247, 70, 74,1)",
+					data: [2.40, 7.40, 1.30, 4.50, 5.60, 4.10, 6.40, 0.30, 1.10, 9.10, 1.40, 3.20, 8.00, 7.00, 1.40, 3.50,
+						6.50, 3.60, 2.10, 10.10]
+				}
+			]
+		};
+		
+		
+		var barC = $("#barChart").get(0).getContext("2d");
+		var barChart = new Chart(barC).Bar(barData, { responsive: true });
+			
+		//Pie & Donut Charts
+			
+		var pieData = [
+			{
+				value: 300,
+				color: "rgba(247, 70, 74, 1)",
+				highlight: "rgba(247, 70, 74, .75)",
+				label: "Red"
+			},
+			{
+				value: 50,
+				color: "rgba(70, 191, 189, 1)",
+				highlight: "rgba(70, 191, 189, .75)",
+				label: "Green"
+			},
+			{
+				value: 100,
+				color: "rgba(253, 180, 92, 1)",
+				highlight: "rgba(253, 180, 92, .75)",
+				label: "Yellow"
+			}
+		]
+		
+		
+		var pieC = $("#pieChart").get(0).getContext("2d");
+		var pieChart = new Chart(pieC).Pie(pieData, { responsive: true });
+		
+		var donutC = $("#donutChart").get(0).getContext("2d");
+		var donutChart = new Chart(donutC).Doughnut(pieData, { responsive: true });
+
+	</script>
 
 </body>
 
