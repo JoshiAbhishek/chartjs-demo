@@ -19,9 +19,6 @@
 
 	<!-- Custom Styles -->
 	<link rel="stylesheet" href="css/mainstyles.css" />
-
-	<!--Custom JavaScript-->
-	<script src="js/main.js"></script>
 </head>
 
 <body>
@@ -61,7 +58,7 @@
 			<!--Line Chart-->
 			<section id="lineChartSection" class="container sectionContainer">
 				<h2 class="sectionTitle">U.S. Historical GDP</h2>
-				<h3 class="sectionDescription">Blah</h3>
+				<h3 class="sectionDescription">A line chart of historical U.S. GDP values</h3>
 
 				<div class="sectionChart">
 					<canvas id="lineChart"></canvas>
@@ -72,7 +69,7 @@
 			<!--Bar Chart-->
 			<section id="barChartSection" class="container sectionContainer">
 				<h2 class="sectionTitle">International GDP Growth (2014)</h2>
-				<h3 class="sectionDescription">Blah</h3>
+				<h3 class="sectionDescription">A bar chart of GDP growth percentages for international countries</h3>
 
 				<div class="sectionChart">
 					<canvas id="barChart"></canvas>
@@ -83,7 +80,7 @@
 			<!--Pie & Donut Charts-->
 			<section id="pieChartSection" class="container sectionContainer">
 				<h2 class="sectionTitle">U.S. Industry GDP Share (2011)</h2>
-				<h3 class="sectionDescription">Blah</h3>
+				<h3 class="sectionDescription">A pie and donut chart of U.S. industries' GDP shares</h3>
 
 				<div class="sectionChart">
 					<div class="row">
@@ -125,7 +122,9 @@
 	</div>
 
 	<script>
-		//Line Chart
+		/*Line Chart*/
+		
+		//Line chart data
 		var lineData = {
 			labels: ["1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
 				"2010", "2011", "2012", "2013"],
@@ -144,12 +143,13 @@
 			]
 		};
 		
-		
+		//Create a new line chart
 		var lineC = $("#lineChart").get(0).getContext("2d");
 		var lineChart = new Chart(lineC).Line(lineData, { responsive: true });
 							
-		//Bar Chart
-							
+		/*Bar Chart*/
+		
+		//Data for the bar chart							
 		var barData = {
 			labels: ["USA", "China", "Japan", "Maldives", "India", "Pakistan", "Bhutan", "Brazil", "Jamaica",
 				"Mongolia", "Germany", "UK", "Sierra Leone", "Nigeria", "South Africa", "South Korea", "Qatar",
@@ -167,12 +167,13 @@
 			]
 		};
 		
-		
+		//Create a new bar chart
 		var barC = $("#barChart").get(0).getContext("2d");
 		var barChart = new Chart(barC).Bar(barData, { responsive: true });
 							
-		//Pie & Donut Charts
-							
+		/*Pie & Donut Charts*/
+		
+		//Data for the pie and donut charts			
 		var pieData = [
 			{
 				value: 300,
@@ -194,31 +195,38 @@
 			}
 		]
 		
-		
+		//Create a new pie chart
 		var pieC = $("#pieChart").get(0).getContext("2d");
 		var pieChart = new Chart(pieC).Pie(pieData, { responsive: true });
 		
+		//Create a new donut chart
 		var donutC = $("#donutChart").get(0).getContext("2d");
 		var donutChart = new Chart(donutC).Doughnut(pieData, { responsive: true });
+		
+		/*Add A Data Value*/
 		
 		var count = 0;
 		$("#dataSubmitButton").on('click', function (e) {
 			e.preventDefault();
 		
+			//If all colors have been used, refresh the page
 			if (count > 4) {
 				alert("Please refresh the page");
 			}
 			else {
-				var dataValue = $("#dataValue").val();
-				var labelValue = $("#labelValue").text();
+				var dataValue = $("#dataValue").val();	//Get data value
+				var labelValue = $("#labelValue").text();	//Get label value
 		
+				//Requires positive data value
 				if (Number(dataValue) < 0) {
 					alert("Please enter a value greater than 0");
 					return;
 				}
 		
+				//Array of color values
 				var colors = [{ display: '#3366ff', highlight: '#668cff' }, { display: '#33cc33', highlight: '#5cd65c' }, { display: '#cc6699', highlight: '#d98cb3' }, { display: '#ffcc00', highlight: '#ffd633' }, { display: '#66ccff', highlight: '#99ddff' }]
 		
+				//Adds a new piece of data to the pie chart
 				pieChart.addData({
 					value: dataValue,
 					color: colors[count].display,
@@ -226,6 +234,7 @@
 					label: labelValue
 				});
 		
+				//Adds a new piece of data to the donut chart
 				donutChart.addData({
 					value: dataValue,
 					color: colors[count].display,
@@ -233,6 +242,7 @@
 					label: labelValue
 				});
 		
+				//Increases the number of colors used
 				count++;
 		
 				$("#dataValue").val('');
