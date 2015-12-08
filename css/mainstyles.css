@@ -43,6 +43,10 @@ h3 {
 	text-transform: lowercase;
 }
 
+#fullPageWrapper {
+	padding-top: 5em;
+}
+
 /*Section Styles*/
 .sectionContainer {
 	background-color: #FFFFFF;
@@ -79,8 +83,8 @@ h3 {
     font-family: sans-serif;
 	padding-left: 2em;
 	padding-right: 2em;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
 	margin-bottom: 0em;
 	background-color: #FFFFFF;
     border-bottom-width: 2px;

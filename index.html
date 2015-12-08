@@ -158,9 +158,9 @@
 		
 		var lineC = $("#lineChart").get(0).getContext("2d");
 		var lineChart = new Chart(lineC).Line(lineData, { responsive: true });
-			
+							
 		//Bar Chart
-			
+							
 		var barData = {
 			labels: ["USA", "China", "Japan", "Maldives", "India", "Pakistan", "Bhutan", "Brazil", "Jamaica",
 				"Mongolia", "Germany", "UK", "Sierra Leone", "Nigeria", "South Africa", "South Korea", "Qatar",
@@ -181,9 +181,9 @@
 		
 		var barC = $("#barChart").get(0).getContext("2d");
 		var barChart = new Chart(barC).Bar(barData, { responsive: true });
-			
+							
 		//Pie & Donut Charts
-			
+							
 		var pieData = [
 			{
 				value: 300,
@@ -213,42 +213,42 @@
 		var donutChart = new Chart(donutC).Doughnut(pieData, { responsive: true });
 		
 		var count = 0;
-		$("#dataSubmitButton").on('click', function(e){
+		$("#dataSubmitButton").on('click', function (e) {
 			e.preventDefault();
-			
-			if(count > 4) {
+		
+			if (count > 4) {
 				alert("Please refresh the page");
 			}
 			else {
 				var dataValue = $("#dataValue").val();
 				var labelValue = $("#labelValue").text();
-				
-			if(Number(dataValue) < 0) {
-				alert("Please enter a value greater than 0");
-				return;
+		
+				if (Number(dataValue) < 0) {
+					alert("Please enter a value greater than 0");
+					return;
+				}
+		
+				var colors = [{ display: '#3366ff', highlight: '#668cff' }, { display: '#33cc33', highlight: '#5cd65c' }, { display: '#cc6699', highlight: '#d98cb3' }, { display: '#ffcc00', highlight: '#ffd633' }, { display: '#66ccff', highlight: '#99ddff' }]
+		
+				pieChart.addData({
+					value: dataValue,
+					color: colors[count].display,
+					highlight: colors[count].highlight,
+					label: labelValue
+				});
+		
+				donutChart.addData({
+					value: dataValue,
+					color: colors[count].display,
+					highlight: colors[count].highlight,
+					label: labelValue
+				});
+		
+				count++;
+		
+				$("#dataValue").val('');
+				$("#labelValue").val('');
 			}
-			
-			var colors = [{display: '', highlight: ''}, {display: '', highlight: ''}, {display: '', highlight: ''}, {display: '', highlight: ''}, {display: '', highlight: ''}]
-			
-			pieChart.addData({
-				value: dataValue,
-				color: colors[count].display,
-				highlight: colors[count].highlight,
-				label: labelValue
-			});
-			
-			donutChart.addData({
-				value: dataValue,
-				color: colors[count].display,
-				highlight: colors[count].highlight,
-				label: labelValue
-			});
-			
-			count++;
-			
-			$("#dataValue").val('');
-			$("#labelValue").text('');
-			}	
 		});
 	</script>
 
