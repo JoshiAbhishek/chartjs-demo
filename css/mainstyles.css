@@ -92,7 +92,7 @@ h3 {
 }
 
 .navbar_component > a:hover {
-	color: rgb(255, 102, 102) !important;
+	color: rgb(179, 223, 255) !important;
 }
 
 .navbar-brand {
@@ -101,8 +101,8 @@ h3 {
 }
 
 .navbar-brand:hover {
-	background-color: rgba(255, 102, 102, 1);
-	color: rgb(255, 102, 102) !important;
+	background-color: rgba(179, 223, 255, 1);
+	color: rgb(179, 223, 255) !important;
 }
 
 #navbarButtonGroup {
@@ -121,8 +121,9 @@ h3 {
 }
 
 #navbarButtonGroup > button:hover {
-	border-color: rgba(255, 102, 102, 1);
-	color: rgba(255, 102, 102, 1) !important;
+	background-color: #FFFFFF;
+	color: rgb(0, 91, 153) !important;
+	border-color: #FFFFFF;
 }
 
 /*Modal Styles*/
@@ -137,22 +138,22 @@ h3 {
     border-radius: 0 !important;
 	
 	background-color: rgba(255, 255, 255, 1);
-	color: rgb(255, 102, 102);
+	color: rgb(0, 91, 153);
 	border: none;
 }
 
 .userAuthButton {
 	background-color: transparent;
-	color: rgb(255, 102, 102) !important;
+	color: rgb(0, 91, 153) !important;
 	border-style: solid;
-	border-color: rgb(255, 102, 102);
+	border-color: rgb(0, 91, 153);
 	border-width: .1em;
 }
 
 .userAuthButton:hover {
-	background-color: rgb(255, 102, 102);
+	background-color: rgb(0, 91, 153);
 	color: #FFFFFF !important;
-	border-color: rgb(255, 102, 102);
+	border-color: rgb(0, 91, 153);
 }
 
 /*Footer Styles*/
