@@ -56,20 +56,6 @@ h3 {
 	margin-bottom: 3em;
 }
 
-/*
-.sectionTitle {
-	
-}
-
-.sectionDescription {
-	
-}
-
-.sectionChart {
-	
-}
-*/
-
 .sectionChart canvas {
 	width: 100%;
 }
@@ -121,7 +107,6 @@ h3 {
 	margin-right: .5em;
 }
 
-
 /*Footer Styles*/
 #mainFooter {
 	background-color: transparent;
@@ -137,17 +122,6 @@ h3 {
 	margin-top: 0em;
 	color: #FFFFFF;
 	text-transform: lowercase;
-}
-
-/*About Section*/
-#aboutSection {
-	background-color: #F1F1F1;
-	color: #737373;
-}
-
-/*New Data Form*/
-#dataForm {
-	margin-top: 0em;
 }
 
 @media screen and (min-width: 992px) { 
