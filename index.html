@@ -108,15 +108,13 @@
 			<form id="dataForm">
 				<div class="form-group">
 					<label form="dataValue">Enter A Data Value</label>
-					<input class="form-control" id="dataValue" name="dataValue" type="text" placeholder="Enter A GDP Share Data Value">
+					<input class="form-control" id="dataValue" name="dataValue" type="number" placeholder="Enter A GDP Share Data Value">
 				</div>
 
-				<!--
 				<div class="form-group">
-					<label for="dataColor">Choose A Display Color</label>
-					<input class="form-control" id="dataColor" name="dataColor" type="text" placeholder="Enter A Display Color">
+					<label for="labelValue">Choose A Label</label>
+					<input class="form-control" id="labelValue" name="labelValue" type="text" placeholder="Enter A Label">
 				</div>
-				-->
 
 				<button id="dataSubmitButton" type="submit" class="btn btn-primary">Add Data</button>
 			</form>
@@ -213,6 +211,45 @@
 		
 		var donutC = $("#donutChart").get(0).getContext("2d");
 		var donutChart = new Chart(donutC).Doughnut(pieData, { responsive: true });
+		
+		var count = 0;
+		$("#dataSubmitButton").on('click', function(e){
+			e.preventDefault();
+			
+			if(count > 4) {
+				alert("Please refresh the page");
+			}
+			else {
+				var dataValue = $("#dataValue").val();
+				var labelValue = $("#labelValue").text();
+				
+			if(Number(dataValue) < 0) {
+				alert("Please enter a value greater than 0");
+				return;
+			}
+			
+			var colors = [{display: '', highlight: ''}, {display: '', highlight: ''}, {display: '', highlight: ''}, {display: '', highlight: ''}, {display: '', highlight: ''}]
+			
+			pieChart.addData({
+				value: dataValue,
+				color: colors[count].display,
+				highlight: colors[count].highlight,
+				label: labelValue
+			});
+			
+			donutChart.addData({
+				value: dataValue,
+				color: colors[count].display,
+				highlight: colors[count].highlight,
+				label: labelValue
+			});
+			
+			count++;
+			
+			$("#dataValue").val('');
+			$("#labelValue").text('');
+			}	
+		});
 	</script>
 
 </body>
