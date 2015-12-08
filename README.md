@@ -3,4 +3,5 @@
 Building a demo dashboard with Chart.js
 
 # Get Started
-Coming Soon.
+
+Fork and clone the repository. Follow the slides to make an awesome chart.js dashboard!
