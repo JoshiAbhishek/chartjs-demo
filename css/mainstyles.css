@@ -5,11 +5,12 @@
 body {
 	font-family: 'Lato', sans-serif;
 	text-align: center;
-	background-color: #FFFFFF;
+	background-color: #005b99;
+	color: #FFFFFF;
 }
 
 .jumbotron {
-	background-color: #FFFFFF;
+	background-color: #F2F2F2;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
     border-radius: 0 !important;
@@ -44,6 +45,14 @@ h3 {
 }
 
 /*Section Styles*/
+.sectionContainer {
+	background-color: #FFFFFF;
+	color: #005b99;
+	padding: 3em;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
 .sectionTitle {
 	
 }
@@ -54,4 +63,114 @@ h3 {
 
 .sectionChart {
 	
+}
+
+.sectionChart canvas {
+	width: 100%;
+}
+
+/*Navbar Styles*/
+.navbar {
+	-o-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    font-family: sans-serif;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-bottom: 0em;
+	background-color: rgba(0,0,0,0) !important;
+    border: none;
+}
+
+.navbar_component > a{
+	color: #FFFFFF !important;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navbar_component > a:hover {
+	color: rgb(255, 102, 102) !important;
+}
+
+.navbar-brand {
+	font-family: 'Montserrat', sans-serif;
+	color: #FFFFFF !important;
+}
+
+.navbar-brand:hover {
+	background-color: rgba(255, 102, 102, 1);
+	color: rgb(255, 102, 102) !important;
+}
+
+#navbarButtonGroup {
+	margin: 0em;
+	margin-top: .55em;
+}
+
+#navbarButtonGroup > button {
+	background-color: transparent;
+	color: #FFFFFF !important;
+	border-style: solid;
+	border-color: #FFFFFF;
+	border-width: .1em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#navbarButtonGroup > button:hover {
+	border-color: rgba(255, 102, 102, 1);
+	color: rgba(255, 102, 102, 1) !important;
+}
+
+/*Modal Styles*/
+.modal {
+	text-align: left;
+}
+
+.modal-content {
+	-o-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+	
+	background-color: rgba(255, 255, 255, 1);
+	color: rgb(255, 102, 102);
+	border: none;
+}
+
+.userAuthButton {
+	background-color: transparent;
+	color: rgb(255, 102, 102) !important;
+	border-style: solid;
+	border-color: rgb(255, 102, 102);
+	border-width: .1em;
+}
+
+.userAuthButton:hover {
+	background-color: rgb(255, 102, 102);
+	color: #FFFFFF !important;
+	border-color: rgb(255, 102, 102);
+}
+
+/*Footer Styles*/
+#mainFooter {
+	background-color: rgba(0,0,0,0);
+	color: #FFFFFF;
+	font-family: 'Raleway', sans-serif;
+	text-transform: lowercase;
+	padding-bottom: 3em;
+	padding-top: 3em;
+}
+
+#footer-title {
+	margin-bottom: 1em;
+	margin-top: 0em;
+}
+
+#footer-title-secondary {
+	margin-top: 0em;
+	margin-bottom: 0em;
 }

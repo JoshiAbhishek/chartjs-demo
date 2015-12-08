@@ -1,36 +1,36 @@
 <h1 class="pageTitle">Dashboard</h1>
 
-<section class="container">
+<div class="container sectionContainer">
 	<h2 class="sectionTitle">US Historical GDP</h2>
 	<h3 class="sectionDescription">Blah</h3>
 
 	<div class="sectionChart">
-		<canvas id="lineChart" width="400" height="400"></canvas>
+		<canvas id="lineChart"></canvas>
 	</div>
 
-</section>
+</div>
 
-<section class="container">
+<section class="container sectionContainer">
 	<h2 class="sectionTitle">International GDP Growth (2014)</h2>
 	<h3 class="sectionDescription">Blah</h3>
 
 	<div class="sectionChart">
-		<canvas id="barChart" width="400" height="400"></canvas>
+		<canvas id="barChart"></canvas>
 	</div>
 
 </section>
 
-<section class="container">
+<section class="container sectionContainer">
 	<h2 class="sectionTitle">US Industry GDP Share (2011)</h2>
 	<h3 class="sectionDescription">Blah</h3>
 
 	<div class="sectionChart">
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
-				<canvas id="pieChart" width="400" height="400"></canvas>
+				<canvas id="pieChart"></canvas>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<canvas id="donutChart" width="400" height="400"></canvas>
+				<canvas id="donutChart"></canvas>
 			</div>
 		</div>
 	</div>
@@ -58,13 +58,6 @@
 	
 	var lineC = $("#lineChart").get(0).getContext("2d");
 	var lineChart = new Chart(lineC).Line(lineData, {responsive: true});
-	
-	/*
-	
-	var lineC = document.getElementById("#lineChart").getContext("2d");
-	var lineChart = new Chart(lineC).Line(lineData, options);
-	
-	*/
 	
 	//Bar Chart
 	
