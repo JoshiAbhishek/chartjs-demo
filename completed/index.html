@@ -77,10 +77,10 @@
 
 			</section>
 
-			<!--Pie & Donut Charts-->
+			<!--Pie & doughnut Charts-->
 			<section id="pieChartSection" class="container sectionContainer">
 				<h2 class="sectionTitle">U.S. Industry GDP Share (2011)</h2>
-				<h3 class="sectionDescription">A pie and donut chart of U.S. industries' GDP shares</h3>
+				<h3 class="sectionDescription">A pie and doughnut chart of U.S. industries' GDP shares</h3>
 
 				<div class="sectionChart">
 					<div class="row">
@@ -88,7 +88,7 @@
 							<canvas id="pieChart"></canvas>
 						</div>
 						<div class="col-xs-12 col-md-6">
-							<canvas id="donutChart"></canvas>
+							<canvas id="doughnutChart"></canvas>
 						</div>
 					</div>
 				</div>
@@ -171,9 +171,9 @@
 		var barC = $("#barChart").get(0).getContext("2d");
 		var barChart = new Chart(barC).Bar(barData, { responsive: true });
 							
-		/*Pie & Donut Charts*/
+		/*Pie & doughnut Charts*/
 		
-		//Data for the pie and donut charts			
+		//Data for the pie and doughnut charts			
 		var pieData = [
 			{
 				value: 300,
@@ -199,9 +199,9 @@
 		var pieC = $("#pieChart").get(0).getContext("2d");
 		var pieChart = new Chart(pieC).Pie(pieData, { responsive: true });
 		
-		//Create a new donut chart
-		var donutC = $("#donutChart").get(0).getContext("2d");
-		var donutChart = new Chart(donutC).Doughnut(pieData, { responsive: true });
+		//Create a new doughnut chart
+		var doughnutC = $("#doughnutChart").get(0).getContext("2d");
+		var doughnutChart = new Chart(doughnutC).Doughnut(pieData, { responsive: true });
 		
 		/*Add A Data Value*/
 		
@@ -234,8 +234,8 @@
 					label: labelValue
 				});
 		
-				//Adds a new piece of data to the donut chart
-				donutChart.addData({
+				//Adds a new piece of data to the doughnut chart
+				doughnutChart.addData({
 					value: dataValue,
 					color: colors[count].display,
 					highlight: colors[count].highlight,

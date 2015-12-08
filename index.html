@@ -18,7 +18,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
 	<!-- Custom Styles -->
-	<link rel="stylesheet" href="css/mainstyles.css" />
+	<!--<link rel="stylesheet" href="css/mainstyles.css" />-->
 </head>
 
 <body>
@@ -61,7 +61,10 @@
 				<h3 class="sectionDescription">A line chart of historical U.S. GDP values</h3>
 
 				<div class="sectionChart">
-					<canvas id="lineChart"></canvas>
+					
+					TODO: Add Your Line Chart Canvas Here
+					
+					
 				</div>
 
 			</section>
@@ -72,23 +75,29 @@
 				<h3 class="sectionDescription">A bar chart of GDP growth percentages for international countries</h3>
 
 				<div class="sectionChart">
-					<canvas id="barChart"></canvas>
+					
+					TODO: Add Your Bar Chart Canvas Here
+					
 				</div>
 
 			</section>
 
-			<!--Pie & Donut Charts-->
+			<!--Pie & doughnut Charts-->
 			<section id="pieChartSection" class="container sectionContainer">
 				<h2 class="sectionTitle">U.S. Industry GDP Share (2011)</h2>
-				<h3 class="sectionDescription">A pie and donut chart of U.S. industries' GDP shares</h3>
+				<h3 class="sectionDescription">A pie and doughnut chart of U.S. industries' GDP shares</h3>
 
 				<div class="sectionChart">
 					<div class="row">
 						<div class="col-xs-12 col-md-6">
-							<canvas id="pieChart"></canvas>
+							
+							TODO: Add Your Pie Chart Canvas Here
+							
 						</div>
 						<div class="col-xs-12 col-md-6">
-							<canvas id="donutChart"></canvas>
+							
+							TODO: Add Your Doughnut Chart Canvas Here
+							
 						</div>
 					</div>
 				</div>
@@ -97,6 +106,7 @@
 		</div>
 
 		<!--Add Data-->
+		<!--
 		<section id="addDataSection" class="container sectionContainer">
 			<h2>Add U.S. Industry GDP Share Data</h2>
 
@@ -114,7 +124,8 @@
 				<button id="dataSubmitButton" type="submit" class="btn btn-primary">Add Data</button>
 			</form>
 		</section>
-
+		-->
+		
 		<!--Footer-->
 		<footer id="mainFooter" class="jumbotron container">
 			<h3><a id="footer-title" target="_blank" href="https://github.com/JoshiAbhishek/chartjs-demo">https://github.com/JoshiAbhishek/chartjs-demo</a></h3>
@@ -130,22 +141,14 @@
 				"2010", "2011", "2012", "2013"],
 			datasets: [
 				{
-					label: "My First dataset",
-					fillColor: "rgba(0, 204, 102,0.2)",
-					strokeColor: "rgba(0, 204, 102,1)",
-					pointColor: "rgba(0, 204, 102,1)",
-					pointStrokeColor: "#fff",
-					pointHighlightFill: "#fff",
-					pointHighlightStroke: "rgba(0, 204, 102,1)",
+					//TODO: Add properties for your line chart
 					data: [4.8, 4.1, 1.0, 1.8, 2.8, 3.8, 2.8, 3.0, 2.6, 0.3, 2.8,
 						2.5, 1.6, 2.3, 2.2]
 				}
 			]
 		};
 		
-		//Create a new line chart
-		var lineC = $("#lineChart").get(0).getContext("2d");
-		var lineChart = new Chart(lineC).Line(lineData, { responsive: true });
+		//TODO: Create a new line chart with the line chart canvas
 							
 		/*Bar Chart*/
 		
@@ -156,52 +159,25 @@
 				"Saudi Arabia", "Sweden", "Turkmenistan"],
 			datasets: [
 				{
-					label: "My First dataset",
-					fillColor: "rgba(247, 70, 74,0.5)",
-					strokeColor: "rgba(247, 70, 74,0.8)",
-					highlightFill: "rgba(247, 70, 74,0.75)",
-					highlightStroke: "rgba(247, 70, 74,1)",
+					//TODO: Add properties for your bar chart
 					data: [2.40, 7.40, 1.30, 4.50, 5.60, 4.10, 6.40, 0.30, 1.10, 9.10, 1.40, 3.20, 8.00, 7.00, 1.40, 3.50,
 						6.50, 3.60, 2.10, 10.10]
 				}
 			]
 		};
 		
-		//Create a new bar chart
-		var barC = $("#barChart").get(0).getContext("2d");
-		var barChart = new Chart(barC).Bar(barData, { responsive: true });
+		//TODO: Create a new bar chart with the bar chart canvas
 							
-		/*Pie & Donut Charts*/
+		/*Pie & doughnut Charts*/
 		
-		//Data for the pie and donut charts			
+		//Data for the pie and doughnut charts			
 		var pieData = [
-			{
-				value: 300,
-				color: "rgba(247, 70, 74, 1)",
-				highlight: "rgba(247, 70, 74, .75)",
-				label: "Red"
-			},
-			{
-				value: 50,
-				color: "rgba(70, 191, 189, 1)",
-				highlight: "rgba(70, 191, 189, .75)",
-				label: "Green"
-			},
-			{
-				value: 100,
-				color: "rgba(253, 180, 92, 1)",
-				highlight: "rgba(253, 180, 92, .75)",
-				label: "Yellow"
-			}
+			//TODO: Add data for your pie and doughnut charts
 		]
 		
-		//Create a new pie chart
-		var pieC = $("#pieChart").get(0).getContext("2d");
-		var pieChart = new Chart(pieC).Pie(pieData, { responsive: true });
+		//TODO: Create a new pie chart with the pie chart canvas
 		
-		//Create a new donut chart
-		var donutC = $("#donutChart").get(0).getContext("2d");
-		var donutChart = new Chart(donutC).Doughnut(pieData, { responsive: true });
+		//TODO: Create a new doughnut chart with the doughnut chart canvas
 		
 		/*Add A Data Value*/
 		
@@ -234,8 +210,8 @@
 					label: labelValue
 				});
 		
-				//Adds a new piece of data to the donut chart
-				donutChart.addData({
+				//Adds a new piece of data to the doughnut chart
+				doughnutChart.addData({
 					value: dataValue,
 					color: colors[count].display,
 					highlight: colors[count].highlight,
