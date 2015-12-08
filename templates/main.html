@@ -1,0 +1,119 @@
+<h1 class="pageTitle">Dashboard</h1>
+
+<section class="container">
+	<h2 class="sectionTitle">US Historical GDP</h2>
+	<h3 class="sectionDescription">Blah</h3>
+
+	<div class="sectionChart">
+		<canvas id="lineChart" width="400" height="400"></canvas>
+	</div>
+
+</section>
+
+<section class="container">
+	<h2 class="sectionTitle">International GDP Growth (2014)</h2>
+	<h3 class="sectionDescription">Blah</h3>
+
+	<div class="sectionChart">
+		<canvas id="barChart" width="400" height="400"></canvas>
+	</div>
+
+</section>
+
+<section class="container">
+	<h2 class="sectionTitle">US Industry GDP Share (2011)</h2>
+	<h3 class="sectionDescription">Blah</h3>
+
+	<div class="sectionChart">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<canvas id="pieChart" width="400" height="400"></canvas>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<canvas id="donutChart" width="400" height="400"></canvas>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<script>
+	//Line Chart
+	var lineData = {
+		labels: ["January", "February", "March", "April", "May", "June", "July"],
+		datasets: [
+			{
+				label: "My First dataset",
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: [65, 59, 80, 81, 56, 55, 40]
+			}
+		]
+	};
+
+	
+	var lineC = $("#lineChart").get(0).getContext("2d");
+	var lineChart = new Chart(lineC).Line(lineData, {responsive: true});
+	
+	/*
+	
+	var lineC = document.getElementById("#lineChart").getContext("2d");
+	var lineChart = new Chart(lineC).Line(lineData, options);
+	
+	*/
+	
+	//Bar Chart
+	
+	var barData = {
+		labels: ["January", "February", "March", "April", "May", "June", "July"],
+		datasets: [
+			{
+				label: "My First dataset",
+				fillColor: "rgba(220,220,220,0.5)",
+				strokeColor: "rgba(220,220,220,0.8)",
+				highlightFill: "rgba(220,220,220,0.75)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data: [65, 59, 80, 81, 56, 55, 40]
+			}
+		]
+	};
+
+
+	var barC = $("#barChart").get(0).getContext("2d");
+	var barChart = new Chart(barC).Bar(barData, {responsive: true});
+	
+	//Pie & Donut Charts
+	
+	var pieData = [
+		{
+			value: 300,
+			color: "#F7464A",
+			highlight: "#FF5A5E",
+			label: "Red"
+		},
+		{
+			value: 50,
+			color: "#46BFBD",
+			highlight: "#5AD3D1",
+			label: "Green"
+		},
+		{
+			value: 100,
+			color: "#FDB45C",
+			highlight: "#FFC870",
+			label: "Yellow"
+		}
+	]
+
+
+	var pieC = $("#pieChart").get(0).getContext("2d");
+	var pieChart = new Chart(pieC).Pie(pieData, {responsive: true});
+
+	var donutC = $("#donutChart").get(0).getContext("2d");
+	var donutChart = new Chart(donutC).Doughnut(pieData, {responsive: true});
+
+</script>

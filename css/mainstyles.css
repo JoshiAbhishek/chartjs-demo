@@ -38,3 +38,20 @@ h3 {
 	text-transform: capitalize;
 	margin-bottom: 2em;
 }
+
+.pageTitle {
+	text-transform: lowercase;
+}
+
+/*Section Styles*/
+.sectionTitle {
+	
+}
+
+.sectionDescription {
+	
+}
+
+.sectionChart {
+	
+}

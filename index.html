@@ -32,11 +32,11 @@
 	<!--ChartJS-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
-	<!--Custom JavaScript-->
-	<script src="js/main.js"></script>
-
 	<!-- Custom files -->
 	<link rel="stylesheet" href="css/mainstyles.css" />
+
+	<!--Custom JavaScript-->
+	<script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
 	<div id="fullPageWrapper">
 
 		<!--Sign up modal for new users-->
-		<div ng-show="!authData" ng-controller="HomeController" class="modal fade" id="signupModal" tabindex="-1">
+		<div ng-show="!authData" ng-controller="MainController" class="modal fade" id="signupModal" tabindex="-1">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -79,7 +79,7 @@
 		</div>
 
 		<!--Log in modal for existing users-->
-		<div ng-show="!authData" ng-controller="HomeController" class="modal fade" id="loginModal" tabindex="-1">
+		<div ng-show="!authData" ng-controller="MainController" class="modal fade" id="loginModal" tabindex="-1">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -107,7 +107,7 @@
 
 		<!--Navbar for the page-->
 		<header>
-			<nav ng-controller="HomeController" class="navbar navbar-default">
+			<nav ng-controller="MainController" class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<a ui-sref="index" class="navbar-brand">CharJS Dashboard</a>
@@ -119,9 +119,9 @@
 					</div>
 					<div class="collapse navbar-collapse" id="main-navbar">
 						<ul class="nav navbar-nav">
-							<li class="navbar_component" ng-show="authData"><a ui-sref="index">Main</a></li>
-							<li class="navbar_component" ng-show="authData"><a ui-sref="favorites">Add Data</a></li>
-							<li class="navbar_component" ng-show="authData"><a ui-sref="explore">About</a></li>
+							<li class="navbar_component" ng-show="authData"><a ui-sref="main">Main</a></li>
+							<li class="navbar_component" ng-show="authData"><a ui-sref="about">About</a></li>
+							<li class="navbar_component" ng-show="authData"><a ui-sref="data">Add Data</a></li>
 						</ul>
 						<div id="navbarButtonGroup" class="pull-right">
 							<!--Button to sign up a new user-->
@@ -148,6 +148,7 @@
 			<p id="footer-title-secondary">By Abhishek Joshi, Rahul Banala, Katrina Saulon, & Jessie Zhang</p>
 		</footer>
 	</div>
+
 
 </body>
 

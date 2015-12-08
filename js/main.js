@@ -32,14 +32,15 @@ myApp.config(function ($stateProvider) {
 //Main Controller
 myApp.controller('MainController', function ($scope, $stateParams, $http, $state, Auth, $firebaseArray, $firebaseObject) {
 	
+	
 });
 
 //About Controller
 myApp.controller('AboutController', function ($scope, $stateParams, $http, $state, Auth, $firebaseArray, $firebaseObject) {
-	
+
 });
 
 //Data Controller
 myApp.controller('DataController', function ($scope, $stateParams, $http, $state, Auth, $firebaseArray, $firebaseObject) {
-	
+
 });
