@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway|Lato|Montserrat);
+
+/*Main Styles*/
+
+body {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	background-color: #005b99;
+	color: #FFFFFF;
+}
+
+.jumbotron {
+	background-color: #F2F2F2;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    margin-bottom: 0em;
+	margin: 0em;
+	width: 100%;
+	padding: 2em;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: .5em;
+	text-transform: lowercase;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	margin-bottom: 1.5em;
+}
+
+h3 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: capitalize;
+	margin-bottom: 1em;
+}
+
+.pageTitle {
+	text-transform: lowercase;
+}
+
+#fullPageWrapper {
+	padding-top: 5em;
+}
+
+/*Section Styles*/
+.sectionContainer {
+	background-color: #FFFFFF;
+	color: #005b99;
+	padding: 3em;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+.sectionChart canvas {
+	width: 100%;
+}
+
+/*Navbar Styles*/
+.navbar {
+	-o-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    font-family: sans-serif;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin-bottom: 0em;
+	background-color: #FFFFFF;
+    border-bottom-width: 2px;
+	border-bottom-color: rgba(0, 91, 153, 1) !important;
+	border-bottom-style: solid;
+}
+
+.navbar_component > a{
+	color: rgba(0, 91, 153, 1) !important;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.navbar_component > a:hover {
+	color: rgba(0, 91, 153, .65) !important;
+}
+
+.navbar-brand {
+	font-family: 'Montserrat', sans-serif;
+	color: rgba(0, 91, 153, 1) !important;
+}
+
+.navbar-brand:hover {
+	color: rgba(0, 91, 153, .65) !important;
+}
+
+#navbarButtonGroup {
+	margin: 0em;
+	margin-top: .55em;
+}
+
+#navbarButtonGroup > button {
+	margin-left: .5em;
+	margin-right: .5em;
+}
+
+/*Footer Styles*/
+#mainFooter {
+	background-color: transparent;
+	color: #FFFFFF;
+	font-family: 'Raleway', sans-serif;
+	text-transform: lowercase;
+	padding-bottom: 3em;
+	padding-top: 3em;
+}
+
+#footer-title {
+	margin-bottom: 1em;
+	margin-top: 0em;
+	color: #FFFFFF;
+	text-transform: lowercase;
+}
+
+@media screen and (min-width: 992px) { 
+	#dataForm {
+		width: 50%;
+		margin-left: 25%;
+	}
+}
