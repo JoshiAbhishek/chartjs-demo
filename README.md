@@ -6,7 +6,7 @@ Building a demo dashboard with Chart.js
 ![home](img/home.png)
 
 #Bar Chart
-![barchart](img/barchar.png)
+![barchart](img/barchart.png)
 
 #Pie and Doughnut Charts
 ![piechart](img/piechart.png)
