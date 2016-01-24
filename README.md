@@ -2,6 +2,7 @@
 
 Building a demo dashboard with Chart.js
 
+<<<<<<< HEAD
 #Home and Line Graph
 ![home](home.png)
 
@@ -13,3 +14,8 @@ Building a demo dashboard with Chart.js
 
 #Adding data
 ![adddata](adddata.png)
+=======
+# Get Started
+
+Fork and clone the repository. Follow the slides to make an awesome chart.js dashboard!
+>>>>>>> origin/master
