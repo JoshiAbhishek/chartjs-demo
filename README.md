@@ -11,5 +11,5 @@ Building a demo dashboard with Chart.js
 #Pie and Doughnut Charts
 ![piechart](img/piechart.png)
 
-#Adding data
+#Adding Data
 ![adddata](img/adddata.png)
