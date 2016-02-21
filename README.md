@@ -2,6 +2,8 @@
 
 Building a demo dashboard with Chart.js
 
+http://joshiabhishek.github.io/chartjs-demo/
+
 #Home and Line Graph
 ![home](img/home.png)
 
